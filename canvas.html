@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canvas Demo</title>
+
+    <style>
+        #myCanvas {
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="600" height="600">
+        Update your browser to enjoy canvas!
+    </canvas>
+<script>
+    var x = 100;
+    var canvas = document.getElementById("myCanvas");
+    var context = canvas.getContext("2d");
+
+    context.scale(2, 2);
+    context.translate(100,100);
+    context.beginPath();
+    context.arc(100, 100, 50, 2*Math.PI,0  , true); // Outer circle
+    context.fillStyle = "red";
+    context.fill();
+    
+    
+
+
+    
+    
+
+</script>
+</body>
+</html>

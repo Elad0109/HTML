@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML5 Web Storage</title>
+    <script>
+        function checkStorageSupport() {
+            if (!window.localStorage) {
+                alert('This browser does NOT support localStorage');
+            }
+        }
+
+        function saveUserName() {
+            var userName = document.getElementById("txtUserName").value;
+            localStorage.userName = userName;
+            document.getElementById("sMessage").innerHTML = "Username saved in storage successfully";
+        }
+
+        function loadUserName() {
+            var userName = localStorage.userName;
+            document.getElementById("txtUserName").value = userName;
+            document.getElementById("sMessage").innerHTML = "Username loaded successfully from storage";
+        }
+    </script>
+</head>
+<body onload="checkStorageSupport();">
+    User name:
+    <input type="text" id="txtUserName" /><br />
+    <input type="button" id="btnSave" value="Save" onclick="saveUserName();" />
+    <input type="button" id="btnLoad" value="Load" onclick="loadUserName();" /><br />
+    <span id="sMessage"></span>
+</body>
+</html>
